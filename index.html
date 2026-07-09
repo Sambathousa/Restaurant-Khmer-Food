@@ -15,7 +15,6 @@
         <div class="header-main">
 
             <div class="logo">
-
                 <img class="logo-image" src="./asset/download.png" alt="">
                 <div class="logo-text">
                     <span class="logo-main">Khmer Food</span>
@@ -35,7 +34,6 @@
                 <li><a href="#">Service</a></li>
                 <li><a href="#">Chef</a></li>
                 <li>
-                    <!-- Order History Button -->
                     <div class="history-wrapper">
                         <button class="history-btn" id="historyToggle">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="white" stroke-width="2">
@@ -48,7 +46,7 @@
                         </button>
 
                         <div class="history-dropdown" id="historyDropdown">
-                            <div class="history-dropdown-header">🕐 Order Phurched</div>
+                            <div class="history-dropdown-header">🕐 Order Purchased</div>
                             <div class="history-items-list" id="historyItemsList">
                                 <div class="history-empty" id="historyEmpty">No past orders yet</div>
                             </div>
@@ -59,7 +57,6 @@
                     </div>
                 </li>
                 <li>
-                    <!-- Cart Button -->
                     <div class="cart-wrapper">
                         <button class="cart-btn" id="cartToggle">
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -71,7 +68,6 @@
                             <span class="cart-count" id="cartCount">0</span>
                         </button>
 
-                        <!-- Dropdown -->
                         <div class="cart-dropdown" id="cartDropdown">
                             <div class="cart-dropdown-header">🛒 Your Cart</div>
                             <div class="cart-items-list" id="cartItemsList">
@@ -90,14 +86,13 @@
     <main>
         <section class="text-section">
             <div>
-                <span class="eyebrow">Phnom Penh &middot; Est. Family Kitchen</span>
+                <span class="eyebrow">Phnom Penh &middot; Est. Family Meeting</span>
                 <h1>Khmer <span class="food">Food</span> </h1>
                 <h1 class="h1">For Your</h1>
                 <h1 class="fresh">Fresh <span class="lift">Life</span></h1>
                 <p class="hero-copy">Slow-cooked somlor, charcoal-grilled meats and rice noodles, made the way our grandmothers made them.</p>
             </div>
              <img class="hero-image" src="./asset/download.jpg" alt="">
-
         </section>
 
         <section class="menu" id="menu">
@@ -116,230 +111,213 @@
             </div>
 
             <div class="menu-header" id="menuGrid">
-                <div class="card1" data-category="noodle-rice">
+                <div class="card1" data-category="noodle-rice" data-price-s="1.50" data-price-m="2.00" data-price-l="2.50">
                     <div class="image-card1">
                         <img src="./asset/images.jpg" alt="Khmer Noodle">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Noodles &amp; Rice</span>
                         <h3 class="title">Khmer Noodle</h3>
                         <p class="describtion">Rice noodles, fish gravy, fresh herbs</p>
-                        <p class="price">Price:2$</p>
+                        <p class="price">Price: 2$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="curry-dip">
+                <div class="card1" data-category="curry-dip" data-price-s="4.00" data-price-m="5.00" data-price-l="6.00">
                     <div class="image-card1">
                         <img src="./asset/images (1).jpg" alt="Amok">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Curries &amp; Dips</span>
                         <h3 class="title">Ah Mok</h3>
                         <p class="describtion">Steamed fish curry in banana leaf ...............</p>
-                        <p class="price">Price:5$</p>
+                        <p class="price">Price: 5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="soup" data-price-s="5.00" data-price-m="6.00" data-price-l="7.50">
                     <div class="image-card1">
                         <img src="./asset/images (2).jpg" alt="Somlo Koko">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Somlor</span>
                         <h3 class="title">Somlo Koko</h3>
                         <p class="describtion">Vegetable soup with prahok and roasted rice</p>
-                        <p class="price">Price:6$</p>
+                        <p class="price">Price: 6$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="curry-dip">
+                <div class="card1" data-category="curry-dip" data-price-s="4.00" data-price-m="5.00" data-price-l="6.00">
                     <div class="image-card1">
                         <img src="./asset/images (3).jpg" alt="Prahok Ktis">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Curries &amp; Dips</span>
                         <h3 class="title">Prahok Ktis</h3>
                         <p class="describtion">Coconut fish dip with vegetables.........</p>
-                        <p class="price">Price:5$</p>
+                        <p class="price">Price: 5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="grill">
+                <div class="card1" data-category="grill" data-price-s="1.00" data-price-m="1.50" data-price-l="2.00">
                     <div class="image-card1">
                         <img src="./asset/images (4).jpg" alt="Bai Sach Chrouk">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Grilled</span>
                         <h3 class="title">Bai Sach Chrouk</h3>
-                        <p class="describtion">Grilled pork over broken rice.................</p>
-                        <p class="price">Price:1.5$</p>
+                        <p class="describtion">Cambodia's national breakfast dish. It consists of thinly sliced, marinated pork that is slowly </p>
+                        <p class="price">Price: 1.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="noodle-rice">
+                <div class="card1" data-category="noodle-rice" data-price-s="1.50" data-price-m="2.00" data-price-l="2.50">
                     <div class="image-card1">
                         <img src="./asset/images (5).jpg" alt="Lot Cha">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Noodles &amp; Rice</span>
                         <h3 class="title">Lot Cha</h3>
                         <p class="describtion">Stir-fried short rice noodles..........</p>
-                        <p class="price">Price:2$</p>
+                        <p class="price">Price: 2$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="soup" data-price-s="6.00" data-price-m="7.00" data-price-l="8.50">
                     <div class="image-card1">
                         <img src="./asset/images (6).jpg" alt="Somlo Kari">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Somlor</span>
                         <h3 class="title">Somlo Kari</h3>
                         <p class="describtion">Coconut curry soup with chicken</p>
-                        <p class="price">Price:7$</p>
+                        <p class="price">Price: 7$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="soup" data-price-s="8.00" data-price-m="10.00" data-price-l="12.00">
                     <div class="image-card1">
                         <img src="./asset/images (7).jpg" alt="Somlor Machu Kroeung">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Somlor</span>
                         <h3 class="title">Somlor Machu Kroeung</h3>
                         <p class="describtion">Sour soup with lemongrass and herbs</p>
-                        <p class="price">Price:10$</p>
+                        <p class="price">Price: 10$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="soup" data-price-s="3.00" data-price-m="3.50" data-price-l="4.50">
                     <div class="image-card1">
                         <img src="./asset/images (8).jpg" alt="Somlo Mju Youn">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Somlor</span>
                         <h3 class="title">Somlo Mju Youn</h3>
                         <p class="describtion">Vietnamese-style sour soup</p>
-                        <p class="price">Price:3.5$</p>
+                        <p class="price">Price: 3.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="soup" data-price-s="7.00" data-price-m="8.50" data-price-l="10.00">
                     <div class="image-card1">
                         <img src="./asset/images (9).jpg" alt="Somlo Mju Tom Yum">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Somlor</span>
                         <h3 class="title">Somlo Mju Tom Yum</h3>
                         <p class="describtion">Spicy and sour Tom Yum style soup</p>
-                        <p class="price">Price:8.5$</p>
+                        <p class="price">Price: 8.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="grill">
+                <div class="card1" data-category="grill" data-price-s="4.50" data-price-m="5.00" data-price-l="6.50">
                     <div class="image-card1">
                         <img src="./asset/images (10).jpg" alt="Cha Lok Lak">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Grilled</span>
                         <h3 class="title">Cha Lok Lak</h3>
                         <p class="describtion">Pan-seared beef cubes, pepper-lime sauce</p>
-                        <p class="price">Price:5$</p>
+                        <p class="price">Price: 5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="noodle-rice">
+                <div class="card1" data-category="noodle-rice" data-price-s="2.00" data-price-m="2.50" data-price-l="3.00">
                     <div class="image-card1">
                         <img src="./asset/images (11).jpg" alt="Nom Banh Chok">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Noodles &amp; Rice</span>
                         <h3 class="title">Nom Banh Chok</h3>
                         <p class="describtion">Traditional rice noodles, green fish gravy</p>
-                        <p class="price">Price:2.5$</p>
+                        <p class="price">Price: 2.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="dessert-drink">
+                <div class="card1" data-category="dessert-drink" data-price-s="1.50" data-price-m="2.00" data-price-l="2.50">
                     <div class="image-card1">
                         <img src="./asset/images (14).jpg" alt="Num Ansom Chek">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Dessert</span>
                         <h3 class="title">Num Ansom Chek</h3>
                         <p class="describtion">Sticky rice and banana, steamed in banana leaf</p>
-                        <p class="price">Price:2$</p>
+                        <p class="price">Price: 2$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="dessert-drink">
+                <div class="card1" data-category="dessert-drink" data-price-s="2.00" data-price-m="2.50" data-price-l="3.00">
                     <div class="image-card1">
                         <img src="./asset/image14.webp" alt="Teuk Krolok">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Drink</span>
                         <h3 class="title">Teuk Krolok</h3>
                         <p class="describtion">Mixed fruit shake with condensed milk</p>
-                        <p class="price">Price:2.5$</p>
+                        <p class="price">Price: 2.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="soup">
+                <div class="card1" data-category="dessert-drink" data-price-s="2.80" data-price-m="3.50" data-price-l="4.20">
                     <div class="image-card1">
                         <img src="./asset/images (12).jpg" alt="Milk Tea">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Drink</span>
                         <h3 class="title">Milk Tea</h3>
                         <p class="describtion">Coconut curry soup with chicken</p>
-                        <p class="price">Price:3.5$</p>
+                        <p class="price">Price: 3.5$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
 
-                <div class="card1" data-category="dessert-drink">
+                <div class="card1" data-category="dessert-drink" data-price-s="0.80" data-price-m="1.00" data-price-l="1.20">
                     <div class="image-card1">
                         <img src="./asset/images (13).jpg" alt="Milk Tea">
                     </div>
-
                     <div class="card-1">
                         <span class="tag">Dessert</span>
                         <h3 class="title">Nom Tnoat</h3>
                         <p class="describtion">Coconut curry soup with chicken</p>
-                        <p class="price">Price:1$</p>
+                        <p class="price">Price: 1$</p>
                         <button class="btn-card">Add to cart</button>
                     </div>
                 </div>
-                
             </div>
 
             <p class="no-results" id="noResults" hidden>No dishes in this category yet.</p>
@@ -368,7 +346,6 @@
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Our Chef</a></li>
                         <li><a href="#">Services</a></li>
-
                     </ul>
             </div>
 
@@ -382,16 +359,43 @@
                     </ul>
             </div>
 
-               <div class="footer-col">
-                    <h4>Contact Us</h4>
-                        <p class="footer-contact">Toul Kork, Phnom Penh</p>
-                        <p class="footer-contact">+855 12 4444 04</p>
-                        <p class="footer-contact">KhmerFood@gmail.com</p>
-                        <p class="footer-contact">Mon to Sun: 7am to 9pm</p>
-                </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                    <p class="footer-contact">Toul Kork, Phnom Penh</p>
+                    <p class="footer-contact">+855 12 4444 04</p>
+                    <p class="footer-contact">KhmerFood@gmail.com</p>
+                    <p class="footer-contact">Mon to Sun: 7am to 9pm</p>
+            </div>
         </div>
         <p class="footer-bottom">&copy; 2026 Khmer Food. All rights reserved.</p>
     </footer>
+
+    <div id="foodModal" class="food-modal">
+        <div class="food-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body-layout">
+                <img id="modalImg" src="" alt="Food Image">
+                <div class="modal-info-text">
+                    <span id="modalTag" class="tag"></span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <p id="modalPrice" class="price"></p>
+                    
+                    <div class="size-selection-container">
+                        <span class="size-label-text">Select Size:</span>
+                        <div class="size-options">
+                            <button class="size-opt-btn" data-size="S">S</button>
+                            <button class="size-opt-btn active" data-size="M">M</button>
+                            <button class="size-opt-btn" data-size="L">L</button>
+                        </div>
+                    </div>
+                    
+                    <button class="modal-add-to-cart-btn" id="modalAddToCartBtn">Add Selected to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="./index.js"></script>
 </body>
 </html>
