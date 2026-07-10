@@ -1,4 +1,4 @@
-// The cart map key configuration uses "Name (Size)" to differentiate pricing/items
+
 let cart = {}; 
 
 const cartCount     = document.getElementById('cartCount');
@@ -22,14 +22,10 @@ const clearHistoryBtn  = document.getElementById('clearHistoryBtn');
 const CART_KEY    = 'khmerfood:cart';
 const HISTORY_KEY = 'khmerfood:order-history';
 
-let orderHistory = []; // array of { date: ISOString, items: [{name, qty, unitPrice}], total }
-let activeSelectedSize = 'M'; // Default size tracking global state variable
+let orderHistory = []; 
+let activeSelectedSize = 'M'; 
 
-// Object to track the current active modal's dynamic size prices
 let currentModalPrices = { S: 0, M: 0, L: 0 };
-
-
-/* ---------------- storage helpers ---------------- */
 
 async function saveCart() {
   try {
@@ -69,9 +65,6 @@ async function loadHistory() {
   }
 }
 
-
-/* ---------------- formatting helpers ---------------- */
-
 function parsePrice(priceText) {
   const match = priceText.replace(/\s/g, '').match(/[\d.]+/);
   return match ? parseFloat(match[0]) : 0;
@@ -87,9 +80,6 @@ function formatDate(isoString) {
     minute: '2-digit'
   });
 }
-
-
-/* ---------------- cart rendering ---------------- */
 
 function renderCart() {
   cartItemsList.innerHTML = '';
@@ -146,7 +136,7 @@ function renderCart() {
 }
 
 function addToCart(name, unitPrice, size = 'M') {
-  // Use a hybrid object key name map string block to allow separate items by size variations
+
   const cartKey = `${name} (${size})`; 
   
   if (cart[cartKey]) {
@@ -168,8 +158,8 @@ function bindCardButton(btn) {
   const priceM    = parseFloat(card.dataset.priceM || parsePrice(card.querySelector('.price').textContent));
 
   btn.addEventListener('click', (e) => {
-    e.stopPropagation(); // Stops the card click modal pipeline from running
-    addToCart(name, priceM, 'M'); // Direct click on main page grid auto-defaults to Medium
+    e.stopPropagation(); 
+    addToCart(name, priceM, 'M'); 
 
     btn.textContent = '✓ Added!';
     btn.classList.add('added');
@@ -189,9 +179,6 @@ cartToggle.addEventListener('click', e => {
   historyDropdown.classList.remove('open');
   cartDropdown.classList.toggle('open');
 });
-
-
-/* ---------------- order history rendering ---------------- */
 
 function renderHistory() {
   historyItemsList.innerHTML = '';
@@ -238,9 +225,6 @@ clearHistoryBtn.addEventListener('click', async () => {
   await saveHistory();
 });
 
-
-/* ---------------- checkout ---------------- */
-
 document.querySelector('.checkout-btn').addEventListener('click', async () => {
   if (Object.keys(cart).length === 0) {
     alert('Your cart is empty!');
@@ -274,9 +258,6 @@ document.querySelector('.checkout-btn').addEventListener('click', async () => {
   cartDropdown.classList.remove('open');
 });
 
-
-/* ---------------- mobile nav ---------------- */
-
 if (menuToggle && navMenu) {
   menuToggle.addEventListener('click', e => {
     e.stopPropagation();
@@ -292,9 +273,6 @@ if (menuToggle && navMenu) {
   });
 }
 
-
-/* ---------------- global layout close listener ---------------- */
-
 document.addEventListener('click', e => {
   if (!cartToggle.contains(e.target) && !cartDropdown.contains(e.target)) {
     cartDropdown.classList.remove('open');
@@ -307,9 +285,6 @@ document.addEventListener('click', e => {
     menuToggle.classList.remove('open');
   }
 });
-
-
-/* ---------------- category filter tabs ---------------- */
 
 if (categoryTabs && menuGrid) {
   const cards = Array.from(menuGrid.querySelectorAll('.card1'));
@@ -336,19 +311,15 @@ if (categoryTabs && menuGrid) {
   });
 }
 
-document.querySelectorAll('.nav a[href="#"]').forEach((link, i) => {
-  const targets = ['menu', null, null, null];
-  if (targets[i]) {
+document.querySelectorAll('.nav a').forEach(link => {
+  const href = link.getAttribute('href');
+  if (href && href.length > 1 && href.startsWith('#')) {
     link.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector('.' + targets[i])
-        ?.scrollIntoView({ behavior: 'smooth' });
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
     });
   }
 });
-
-
-/* ---------------- cards viewport animation ---------------- */
 
 const observer = new IntersectionObserver(
   entries => {
@@ -369,9 +340,6 @@ document.querySelectorAll('.card1').forEach((card, i) => {
   card.style.transition = `opacity 0.4s ease ${i * 0.05}s, transform 0.4s ease ${i * 0.05}s`;
   observer.observe(card);
 });
-
-
-/* ---------------- brand typewriter branding ---------------- */
 
 (function typewriterHero() {
   const tagline = document.querySelector('.logo-sub');
@@ -395,9 +363,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-
-/* ===== Food Detail Modal Logic with Size Interactivity ===== */
-
 const foodModal        = document.getElementById('foodModal');
 const closeModalBtn    = document.querySelector('.close-modal');
 const modalImg         = document.getElementById('modalImg');
@@ -408,19 +373,16 @@ const modalPrice       = document.getElementById('modalPrice');
 const modalAddToCartBtn = document.getElementById('modalAddToCartBtn');
 const sizeButtons      = document.querySelectorAll('.size-opt-btn');
 
-// Size button switcher event listener routing
 sizeButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     sizeButtons.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeSelectedSize = btn.dataset.size;
-    
-    // Updates modal price label dynamically when shifting size parameters
+
     modalPrice.textContent = `Price: ${currentModalPrices[activeSelectedSize]}$`;
   });
 });
 
-// Card click layout map routing to display dynamic modal profile
 document.querySelectorAll('.card1').forEach(card => {
   card.addEventListener('click', (e) => {
     if (e.target.closest('.btn-card')) return;
@@ -430,7 +392,6 @@ document.querySelectorAll('.card1').forEach(card => {
     const desc = card.querySelector('.describtion').textContent.trim();
     const imgSrc = card.querySelector('.image-card1 img').src;
 
-    // Load size-specific prices or configure fallback metrics
     const baseM = parsePrice(card.querySelector('.price').textContent);
     currentModalPrices.S = card.dataset.priceS ? card.dataset.priceS : (baseM * 0.8).toFixed(2);
     currentModalPrices.M = card.dataset.priceM ? card.dataset.priceM : baseM.toFixed(2);
@@ -441,7 +402,6 @@ document.querySelectorAll('.card1').forEach(card => {
     modalDescription.textContent = desc;
     modalImg.src = imgSrc;
 
-    // Reset default size selection state window configuration on item refresh
     activeSelectedSize = 'M';
     modalPrice.textContent = `Price: ${currentModalPrices['M']}$`;
     
@@ -454,12 +414,10 @@ document.querySelectorAll('.card1').forEach(card => {
   });
 });
 
-// Click add button inside food detail modal
 modalAddToCartBtn.addEventListener('click', () => {
   const currentItemName = modalTitle.textContent;
   const currentItemPrice = parseFloat(currentModalPrices[activeSelectedSize]);
-  
-  // Appends chosen item using target size metrics state
+
   addToCart(currentItemName, currentItemPrice, activeSelectedSize); 
   
   modalAddToCartBtn.textContent = '✓ Added!';
@@ -480,9 +438,6 @@ window.addEventListener('click', (e) => {
     foodModal.classList.remove('open');
   }
 });
-
-
-/* ---------------- init: load persisted data on page load ---------------- */
 
 (async function init() {
   await Promise.all([loadCart(), loadHistory()]);

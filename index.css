@@ -776,7 +776,6 @@ header {
 .desribtion1 { font-size: 2rem; color: #333; padding: 10px 0; }
 .heading-menu { padding-top: 30px; }
 
-/* ===== Food Detail Modal Styles ===== */
 .food-modal {
     display: none;
     position: fixed;
@@ -861,7 +860,6 @@ header {
     line-height: 1.6;
 }
 
-/* Size UI Styles */
 .size-selection-container {
     margin-top: 4px;
     display: flex;
@@ -925,7 +923,6 @@ header {
     transform: scale(0.98);
 }
 
-/* Responsive design adjustments */
 @media (max-width: 1024px) {
     .header-main { padding: 16px 24px; }
     .nav { gap: 20px; }
@@ -956,10 +953,32 @@ header {
         z-index: 1000;
         border-top: 1px solid bisque;
     }
-    .nav.open { max-height: 500px; }
+   
+    .nav.open {
+        max-height: 2000px;
+        overflow: visible;
+    }
     .nav li { width: 100%; text-align: center; padding: 14px 0; border-bottom: 1px solid bisque; }
-    .cart-wrapper, .history-wrapper { display: flex; justify-content: center; }
-    .cart-dropdown, .history-dropdown { right: auto; left: 50%; transform: translateX(-50%); width: 90vw; max-width: 320px; }
+
+    .cart-wrapper, .history-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .cart-dropdown, .history-dropdown {
+        position: fixed;
+        top: 130px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 90vw;
+        max-width: 320px;
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+
     .text-section { flex-direction: column-reverse; text-align: center; margin: 30px 24px 0; font-size: 22px; gap: 24px; }
     .hero-copy { margin-left: auto; margin-right: auto; }
     .hero-image { width: 100%; max-width: 360px; }
@@ -968,6 +987,12 @@ header {
     .tab-btn { flex: 0 0 auto; white-space: nowrap; }
     .grid-footer { grid-template-columns: 1fr 1fr; gap: 24px; padding: 30px 0; }
     .desribtion1 { font-size: 1.6rem; }
+
+    .btn-card {
+        align-self: stretch;
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media (max-width: 550px) {
