@@ -1020,9 +1020,7 @@ header {
     .select { font-size: 14px; }
 }
 
-/* ==========================================================================
-   New Services & Chefs Sections styling
-   ========================================================================== */
+
 
 .services-section, .chefs-section {
     padding: 60px 24px;
@@ -1042,7 +1040,7 @@ header {
     margin-bottom: 40px;
 }
 
-/* Services Layout */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1080,7 +1078,7 @@ header {
     line-height: 1.6;
 }
 
-/* Chefs Layout */
+
 .chefs-grid {
     display: flex;
     justify-content: center;
