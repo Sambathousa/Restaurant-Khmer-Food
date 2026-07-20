@@ -1,4 +1,3 @@
-
 let cart = {}; 
 
 const cartCount     = document.getElementById('cartCount');
@@ -334,7 +333,7 @@ const observer = new IntersectionObserver(
   { threshold: 0.1 }
 );
 
-document.querySelectorAll('.card1').forEach((card, i) => {
+document.querySelectorAll('.card1, .service-card, .chef-card').forEach((card, i) => {
   card.style.opacity    = '0';
   card.style.transform  = 'translateY(24px)';
   card.style.transition = `opacity 0.4s ease ${i * 0.05}s, transform 0.4s ease ${i * 0.05}s`;

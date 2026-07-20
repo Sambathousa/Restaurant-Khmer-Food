@@ -1019,3 +1019,130 @@ header {
     .desribtion1 { font-size: 1.4rem; }
     .select { font-size: 14px; }
 }
+
+/* ==========================================================================
+   New Services & Chefs Sections styling
+   ========================================================================== */
+
+.services-section, .chefs-section {
+    padding: 60px 24px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    scroll-margin-top: 40px;
+}
+
+.chefs-section {
+    background-color: rgba(255, 248, 220, 0.5);
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.section-title-wrapper {
+    margin-bottom: 40px;
+}
+
+/* Services Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px -10px rgba(74, 47, 28, 0.35);
+    transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-family: var(--font-display);
+    color: var(--clr-ink);
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Chefs Layout */
+.chefs-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.chef-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px -10px rgba(74, 47, 28, 0.35);
+    width: 280px;
+    text-align: center;
+}
+
+.chef-image-wrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 4px solid var(--clr-salmon);
+}
+
+.chef-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chef-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.chef-role {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--clr-red);
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.chef-card p {
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .chefs-grid {
+        gap: 25px;
+    }
+}
